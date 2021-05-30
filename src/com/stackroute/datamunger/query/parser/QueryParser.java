@@ -30,8 +30,24 @@ public class QueryParser {
 	 * QueryParameter class
 	 */
 	public QueryParameter parseQuery(String queryString) {
-
-		return queryParameter;
+	DataMunger dataMunger =  new DataMunger();
+	//file name
+	queryParameter.setFileName(dataMunger.getFileName(queryString));
+	//base query
+	queryParameter.setBaseQuery(dataMunger.getBaseQuery(queryString));
+	//order by clause
+	queryParameter.setOrderByFields(dataMunger.getOrderByFields(queryString));
+	//group by clause
+	queryParameter.setGroupByFields(dataMunger.getGroupByFields(queryString));
+	//get Fields
+	queryParameter.setFields(dataMunger.getFields(queryString));
+	//get Aggregate function
+	queryParameter.setAggregateFunctions(dataMunger.getAggregateFunctions(queryString));
+	//get restrictions
+	queryParameter.setRestrictions(dataMunger.getRestrictions(queryString));
+	//get logical operators
+	queryParameter.setLogicalOperators(dataMunger.getLogicalOperators(queryString));
+	return queryParameter;
 	}
 
 	/*
