@@ -2,21 +2,12 @@ package com.stackroute.datamunger.query.parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DataMunger {
 
-	/*
-	 * This method will split the query string based on space into an array of words
-	 * and display it on console
-	 */
-
-	public String[] getSplitStrings(String queryString) {
-		return queryString.toLowerCase().split(" ");
-	}
 
 	/*
 	 * Extract the name of the file from the query. File name can be found after a
